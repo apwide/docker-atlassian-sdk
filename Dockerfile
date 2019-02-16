@@ -1,8 +1,8 @@
 FROM codeclou/docker-oracle-jdk:8u152
 
 ENV ATLS_VERSIN 8.0.7
-ENV UID 0
-ENV GID 0
+ENV UID 10777
+ENV GID 10777
 
 #
 # BASE PACKAGES + DOWNLOAD GLIBC & ORACLE JAVA & ATLASSIAN SDK
@@ -32,8 +32,6 @@ RUN apk add --no-cache \
 #
 COPY docker-entrypoint.sh /opt/docker-entrypoint.sh
 RUN chmod u+rx,g+rx,o+rx,a-w /opt/docker-entrypoint.sh && \
-    addgroup -g ${GID} worker && \
-    adduser -D -G worker -u ${UID} worker && \
     chown -R worker:worker /opt/atlas/ && \
     chmod -R u+rwx,g+rwx,o-rwx /opt/atlas/ && \
     chown -R worker:worker /opt/atlas-work/ && \
