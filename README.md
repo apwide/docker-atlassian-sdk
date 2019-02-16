@@ -6,7 +6,8 @@ Docker-Image to run [Atlassian Pugin SDK](https://developer.atlassian.com/displa
 Includes [Oracle Java 8 JDK](https://www.oracle.com/java/) and [glibc](https://github.com/sgerrand/alpine-pkg-glibc).
 
 Apwide's contribution:
-Includes xvfb + xvfb-run to execute headless selenium tests
+* Includes xvfb + xvfb-run to execute headless selenium tests
+* Upgrade to 8.0.7 atlassian plugin sdk
 
 
 -----
