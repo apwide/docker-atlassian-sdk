@@ -11,7 +11,4 @@ then
     sed -i "s@<mirrors>@<mirrors><mirror><mirrorOf>*</mirrorOf><name>remote-repos</name><url>${MAVEN_REPOSITORY_MIRROR}</url><id>remote-repos</id></mirror>@g" $ATLAS_MAVEN_HOME/conf/settings.xml
 fi
 
-addgroup -g ${GID} worker && \
-adduser -D -G worker -u ${UID} worker && \
-
 exec "$@"
