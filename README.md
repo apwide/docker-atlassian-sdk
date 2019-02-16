@@ -8,6 +8,7 @@ Includes [Oracle Java 8 JDK](https://www.oracle.com/java/) and [glibc](https://g
 Apwide's contribution:
 * Includes xvfb + xvfb-run to execute headless selenium tests
 * Upgrade to 8.0.7 atlassian plugin sdk
+* Add UID and GID environment variables to
 
 
 -----
