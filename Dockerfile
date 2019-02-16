@@ -1,6 +1,6 @@
 FROM codeclou/docker-oracle-jdk:8u152
 
-ENV ATLS_VERSIN 8.0.7
+ENV ATLS_VERSIN 6.3.9
 ENV UID 110
 ENV GID 118
 
