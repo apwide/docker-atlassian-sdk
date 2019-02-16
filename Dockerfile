@@ -1,6 +1,6 @@
 FROM codeclou/docker-oracle-jdk:8u152
 
-ENV ATLS_VERSIN 6.3.15
+ENV ATLS_VERSIN 8.0.7
 
 #
 # BASE PACKAGES + DOWNLOAD GLIBC & ORACLE JAVA & ATLASSIAN SDK
@@ -17,6 +17,7 @@ RUN apk add --no-cache \
             zlib \
             curl \
             gzip \
+            xvfb \
             tar && \
     mkdir -p /opt/atlas/ && \
     mkdir -p /opt/atlas-work/ && \
@@ -40,6 +41,10 @@ RUN chmod u+rx,g+rx,o+rx,a-w /opt/docker-entrypoint.sh && \
     rm -f /opt/atlassian-plugin-sdk-${ATLS_VERSIN}.tar.gz && \
     apk del curl gzip tar && \
     rm -rf /tmp/* /var/cache/apk/*
+
+RUN apk add --update xvfb
+COPY xvfb-run /usr/bin/
+RUN chmod +x /usr/bin/xvfb-run
 
 #
 # RUN

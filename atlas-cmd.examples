@@ -1,0 +1,1 @@
+docker run -i -t --volume $(pwd)/:/opt/atlas -v ~/.m2:/home/worker/.m2  apwide/atlas-sdk:latest  /bin/bash -c "atlas-version;xvfb-run -a --server-args='-screen 0, 1920x1200x16' atlas-integration-test --lib-plugins org.postgresql:postgresql:9.4.1209 -Dquickreload=false -Dskipmanifest=false -Dpde=true -Datlassian.dev.mode=false -Ddb.config.folder=postgres/jenkins"
